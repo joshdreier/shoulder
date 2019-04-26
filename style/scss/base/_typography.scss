@@ -258,8 +258,6 @@ blockquote {
 
 }//blockquote
 
-
-
 %page-title {
   font-family: $open-sans;
   font-weight: normal;
@@ -278,53 +276,25 @@ blockquote {
   }
 }//%page-title
 
-
-%page-subtitle {
-  margin-top: 0;
-  font-family: $open-sans;
-  font-weight: normal;
-  color: $nero;
-  text-transform: uppercase;
-  letter-spacing: -.025em;
-  @include font(30, 25);
-
-  @include mq($ipad) {
-    @include font(36, 30);
-  }
-
-  @include mq($desktop) {
-    @include font(48, 38);
-  }
-
-  @include mq($desktop-plus) {
-    @include font(54, 44);
-  }
-
-  // remove icons
-  .fa,
-  .fas {
-    display: none;
-  }
-
-}//%page-subtitle
-
 %h2-alt {
   font-family: $open-sans;
-  font-weight: normal;
-  text-transform: none;
-  @include font(22, 22);
+  font-weight: 800;
+  text-transform: uppercase;
+  @include font(20);
+  line-height: 1;
   color: $nero;
+  letter-spacing: -0.045em;
 
   @include mq($tablet) {
-    @include font(26, 26);
+    @include font(24);
   }
 
   @include mq($desktop) {
-    @include font(28, 28);
+    @include font(26);
   }
 
   @include mq($desktop-plus) {
-    @include font(32, 32);
+    @include font(28);
   }
 
 }//%h2-alt
@@ -371,3 +341,17 @@ aside {
   }
 
 }
+
+
+figcaption {
+  @include font(15, 22);
+
+  @include mq($tablet) {
+    @include font(16, 20);
+  }
+
+  @include mq($desktop-plus) {
+    @include font(18, 24);
+  }
+
+}//figcaption

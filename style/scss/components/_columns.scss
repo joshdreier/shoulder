@@ -1,0 +1,122 @@
+// for the homepage!
+
+.columns {
+
+  @include mq($tablet) {
+    display: flex;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mq($desktop) {
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 6%;
+  }
+
+  section {
+    @include spacing(margin, bottom);
+
+  }
+
+  h2 {
+    @extend %h2-alt;
+  }
+
+  ul,
+  ol {
+    @include no-bullet;
+  }
+
+  p,
+  %p,
+  ul,
+  ol,
+  li,
+  aside {
+    @include margin(rem(24) null);
+    @include font(15, 24);
+
+    @include mq($tablet) {
+      @include margin(rem(28) null);
+      @include font(16, 26);
+    }
+
+    @include mq($desktop-plus) {
+      @include font(18, 28);
+    }
+
+  }// typography
+
+  .innovations-list {
+
+    li {
+      margin: rem(24) 0;
+
+      @include mq($tablet) {
+        margin: rem(40) 0;
+      }
+
+      @include mq($desktop-plus) {
+        margin: rem(50) 0;
+      }
+
+    }
+
+  }//innovations-list
+
+  .injuries-list {
+    font-weight: 500;
+
+    ul {
+
+      column-count: 2;
+
+      li {
+        margin: rem(18) 0;
+        line-height: 1.2;
+
+        @include mq($desktop-plus) {
+          margin: rem(20) 0;
+        }
+
+      }
+
+    }
+
+  }
+
+  .consultations {
+
+   .button {
+      @include button($persian-green, $denim);
+    }
+  }
+
+  // tablet columns
+
+  .column {
+
+    @include mq($tablet-only) {
+
+      &:last-child {
+        grid-column: 1 / 4;
+      }
+
+      &:nth-child(1) {
+        padding-right: rem(30);
+      }
+
+      &:nth-child(2) {
+        padding-left: rem(30);
+      }
+
+    }//@include mq($tablet-only)
+
+  }//.column
+
+
+}//.columns
+
+

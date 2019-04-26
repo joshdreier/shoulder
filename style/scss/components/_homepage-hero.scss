@@ -1,77 +1,117 @@
 // remove max-width for home hero to stretch fullbleed
+$hero-height: 634px;
+$hero-height-plus: 700px;
 
 .hero {
   position: relative;
-  @include background-cover;
-  background-image: url($images-path + 'hero-drpaul.jpg');
   background-position: center top;
+  background: $white-smoke;
+  padding-bottom: rem(20);
+  margin-bottom: rem(40);
 
   @include mq($tablet) {
     display: flex;
-    padding-top: 26px;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 
   @include mq($desktop) {
     padding-top: 0;
-    min-height: 634px;
+    background: none;
   }
 
-  &::before {
-    content: '';
-    @include fit-container;
+  .photo {
+    width: 100%;
+    @include background-cover;
+    background-image: url($images-path + 'hero-drpaul.jpg');
+    background-position: center top;
 
+    @include mq($tablet-max) {
+      @include aspect-ratio(percentage(9/16), null);
+    }
+
+    @include mq($tablet-only) {
+      width: 40%;
+    }
+
+    &::after {
+      content: '';
+      background: linear-gradient(to top, rgba($black, 0.60) 0%, rgba($black, 0) 20%);
+    }
+
+    @include mq($tablet) {
+
+      &::after {
+        @include fit-container;
+      }
+
+    }
 
     @include mq($desktop) {
-      background: linear-gradient(to right, rgba($black, 0.60) 14%,rgba($black, 0) 60%);
+      position: absolute;
+      width: 100%;
+      min-height: $hero-height;
+
+      &::before {
+        content: '';
+        @include fit-container;
+
+        @include mq($desktop) {
+          background: linear-gradient(to right, rgba($black, 0.60) 24%,rgba($black, 0) 50%);
+        }
+
+        @include mq($desktop-med) {
+          background: linear-gradient(to right, rgba($black, 0.60) 24%, rgba($black, 0) 40%);
+        }
+
+      }
+
     }
 
-    @include mq($desktop-med) {
-      background: linear-gradient(to right, rgba($black, 0.60) 24%, rgba($black, 0) 40%);
+    @include mq($desktop-plus) {
+      min-height: $hero-height-plus;
     }
 
-  }
-
-  &::after {
-    content: '';
-    @include fit-container;
-    background: linear-gradient(to top, rgba($black, 0.60) 0%, rgba($black, 0) 20%);
-  }
-
-  &-title {
-    display: none;
-  }
-
-  &-text {
-    align-self: center;
-
-    @include mq($mobile) {
-      padding: $gutter-mobile;
-    }
-
-  }
+  }//.photo
 
   .hero-container {
     @include grid-container;
-    position: relative;
-  }
+
+    @include mq($tablet-only) {
+      padding-left: rem(30);
+      width: 60%;
+    }
+
+    @include mq($desktop) {
+      min-height: $hero-height;
+      position: relative;
+    }
+
+    @include mq($desktop-plus) {
+      min-height: $hero-height-plus;
+    }
+
+  }//.hero-container
 
   .mission {
-    color: $white;
     position: relative;
     z-index: 1;
     padding-top: rem(20);
 
     @include mq($desktop) {
+      color: $white;
       max-width: 40%;
       padding-top: rem(40);
     }
 
     @include mq($desktop-med) {
       max-width: 35%;
+      padding-top: rem(50);
     }
 
     @include mq($desktop-plus) {
       max-width: 30%;
+      padding-top: rem(60);
     }
 
     h2 {
@@ -94,11 +134,6 @@
       @include margin(rem(24) null);
       @include font(15, 24);
 
-      @include mq($tablet) {
-        @include margin(rem(28) null);
-        @include font(16, 28);
-      }
-
       @include mq($desktop) {
         @include font(18, 28);
       }
@@ -107,23 +142,54 @@
 
     a {
       font-weight: bold;
-      color: $white;
-      text-decoration: underline;
+
+      @include mq($desktop) {
+        color: $white;
+        text-decoration: underline;
+      }
+
+    }
+
+    p {
+
+      @include mq($tablet-max) {
+
+        &:last-of-type {
+          @include font(18);
+          margin-bottom: rem(30) !important;
+        }
+
+      }
+
+    }
+
+    ul {
+      margin-top: rem(16);
     }
 
   }//.mission
 
 
   .newsletter {
-    position: absolute;
-    z-index: 1;
-    bottom: 30px;
-    left: 50px;
+
+    @include mq($desktop) {
+      position: absolute;
+      z-index: 1;
+      bottom: 30px;
+      left: 50px;
+    }
 
     fieldset {
       position: relative;
-      width: 400px;
       height: 50px;
+
+      @include mq($tablet-only) {
+        margin-bottom: 14px;
+      }
+
+      @include mq($desktop) {
+        width: 400px;
+      }
 
       label {
         @include visually-hidden;
@@ -136,12 +202,14 @@
       left: 0;
       top: 0;
       width: 100%;
-      border-radius: 8px;
-      background: $white-transparent-hero;
-      border: 0;
       padding: 10px 140px 10px 15px;
       @include font(20);
-      box-shadow: none;
+
+      @include mq($desktop) {
+        background: $white-transparent-hero;
+        box-shadow: none;
+        border: 0;
+      }
 
       @include placeholder {
         color: $nero;
@@ -152,18 +220,55 @@
     input[type=submit] {
       position: absolute;
       right: 5px;
-      top: 5px;
-      padding: rem(11) rem(15);
+      top: 7px;
+      padding: rem(11) rem(15) rem(10);
       @include font(18);
+
+      @include mq($mobile) {
+        width: auto;
+      }
+
+      @include mq($desktop) {
+        top: 5px;
+        padding-bottom: rem(11);
+      }
+
+    }//input[type=submit]
+
+  }//newsletter
+
+  .social-container {
+
+    @include mq($desktop) {
+      @include grid-container;
+      min-height: $hero-height;
+      position: relative;
+    }
+
+    @include mq($desktop-plus) {
+      min-height: $hero-height-plus;
     }
 
   }
 
   .social-media-icons {
+    display: block;
     z-index: 1;
     position: absolute;
     bottom: 30px;
     right: 50px;
+
+    @include mq($mobile) {
+      bottom: 12px;
+      right: 24px;
+    }
+
+    @include mq($tablet-only) {
+      right: auto;
+      left: 30px;
+      bottom: 16px;
+    }
+
   }
 
 }//.hero

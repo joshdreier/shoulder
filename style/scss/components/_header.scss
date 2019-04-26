@@ -91,6 +91,10 @@
 
     }//.mobile-nav-open &
 
+    @include mq($tablet-only) {
+      margin-top: -1px;
+    }
+
   }//.hamburger-menu
 
   .topnav {

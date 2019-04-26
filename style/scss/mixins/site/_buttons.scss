@@ -10,13 +10,13 @@
   color: $text-color !important;
   border-radius: 8px;
   text-align: center;
-  @include font(20, 20);
+  @include font(18);
+  line-height: 1;
   background-clip: padding-box;
   border: 0;
 
   @include mq($tablet) {
-    padding: rem(17) 30px;
-    @include font(24, 24);
+    padding: rem(20) 30px;
   }
 
   .sidebar & {

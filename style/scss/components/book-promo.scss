@@ -1,0 +1,51 @@
+.book-promo {
+
+  .buttons-container {
+    display: flex;
+    align-items: center;
+  }
+
+  ul {
+    margin-top: 0;
+    margin-left: rem(40);
+
+    @include mq($desktop) {
+      margin-left: rem(20);
+    }
+
+    @include mq($desktop-med) {
+      margin-left: rem(40);
+    }
+
+  }
+
+  img {
+    max-width: 130px;
+
+    @include mq($desktop) {
+      max-width: 100px;
+    }
+
+    @include mq($desktop-med) {
+      max-width: 130px;
+    }
+
+  }
+
+  .button {
+
+    @include mq($tablet) {
+      width: 168px;
+    }
+
+    @include mq($desktop) {
+      width: 150px;
+    }
+
+    @include mq($desktop-med) {
+      width: 168px;
+    }
+
+  }
+
+}

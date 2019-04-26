@@ -3,9 +3,9 @@
 // Use if default "outline" styles are cut off or low contrast
 // Options include $color, $blur, $spread, and $opacity
 
-@mixin outline($color: $red, $spread: rem(6), $opacity: 1, $stroke: null) {
+@mixin outline($color: $denim, $spread: rem(6), $opacity: 1, $stroke: null) {
   //outline: 0;
-  outline-color: $red;
+  outline-color: $denim;
 
   // body class to detect keyboard tabbing
   .keyboard-user &:focus {
