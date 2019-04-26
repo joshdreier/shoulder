@@ -1,0 +1,10 @@
+// based on https://stackoverflow.com/questions/43091626/complex-mixin-for-css-grid
+
+@mixin grid($grid-type, $args, $column-gap: null, $row-gap: null) {
+  @supports (display: grid) {
+    display: grid;
+    #{$grid-type}: #{$args};
+    grid-column-gap: $column-gap;
+    grid-column-gap: $row-gap;
+  }
+}

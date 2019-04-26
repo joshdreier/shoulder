@@ -1,0 +1,19 @@
+// @mixin outline;
+// Displays border around container for accessibility purposes
+// Use if default "outline" styles are cut off or low contrast
+// Options include $color, $blur, $spread, and $opacity
+
+@mixin outline($color: $red, $spread: rem(6), $opacity: 1, $stroke: null) {
+  //outline: 0;
+  outline-color: $red;
+
+  // body class to detect keyboard tabbing
+  .keyboard-user &:focus {
+    box-shadow: 0 0 0 $spread rgba($color, $opacity) $stroke;
+    border-radius: 8px;
+  } // &:focus
+
+  .keyboard-user.pointerevents &:focus:hover {
+    box-shadow: none;
+  } // &:focus:hover
+} // @mixin outline

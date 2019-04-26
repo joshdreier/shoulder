@@ -1,0 +1,172 @@
+label,
+%label {
+  display: block;
+  color: $dim-grey;
+  margin-bottom: rem(3);
+
+  .form-required {
+    color: $dim-grey;
+  }
+
+  @include mq($tablet) {
+    @include font(18);
+  }
+
+}
+
+select {
+  appearance: none;
+  line-height: normal;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid rgba(#979797, 0.34);
+  padding: 15px 35px 15px 10px;
+  font-weight: bold;
+  @include font(16);
+  background: $white-smoke url($images-path + 'icon-select.svg') no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 10px;
+
+  @include mq($mobile) {
+    width: 100%;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+input[type=text],
+.date-input,
+input[type=email],
+input[type=phone],
+input[type=password],
+input[type=file],
+textarea {
+  border-radius: 8px;
+  background: $white;
+  border: 1px solid rgba(#979797, 0.34);
+  padding: 9px 15px;
+  @include font(20);
+  box-shadow: inset 0px 1px 3px 0px $black-transparent;
+
+  @include mq($mobile) {
+    width: 100%;
+  }
+
+  @include placeholder {
+    color: $empress;
+  }
+
+  .sidebar & {
+    width: 100%;
+  }
+
+}
+
+input[type="submit"] {
+  @include button($persian-green, $denim);
+}
+
+label {
+  position: relative;
+
+  input[type=checkbox] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: none;
+    border: 2px solid $black;
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    background-color: $white;
+
+    &:checked {
+      border-color: $empress;
+
+      &::after {
+        content: '';
+        width: 18px;
+        height: 18px;
+        background-color: $empress;
+        display: block;
+        @include centered;
+      }
+    }
+
+    &:hover {
+      border-color: $black;
+    }
+  }
+}
+
+// this hides the datepickers up/down arrows that
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+/// WEBFORM STUFF
+
+.form-item,
+.mc-field-group {
+  margin-bottom: rem(20);
+
+  @include mq($tablet) {
+    margin-bottom: rem(30);
+  }
+
+  @include mq($desktop) {
+    margin-bottom: rem(40);
+
+    .sidebar-first &,
+    .sidebar-second & {
+      margin-bottom: rem(20);
+    }
+
+  }
+
+  &.form-type-checkbox,
+  &.form-type-radio,
+  &.input-group ul > li {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(15);
+
+    > label {
+      margin: rem(2) 0 0 rem(15);
+    }
+
+  }//&.form-type-radio
+
+  .description {
+    color: $empress;
+    @include font(14, 18);
+    margin-top: 5px;
+    font-style: italic;
+
+    @include mq($tablet) {
+      @include font(15, 20);
+    }
+
+    .sidebar-first &,
+    .sidebar-second & {
+      margin-bottom: rem(10);
+    }
+
+  }
+
+}//.form-item
+
+.form-actions {
+  margin-top: rem(30);
+
+  @include mq($tablet) {
+    margin-top: rem(40);
+  }
+
+  @include mq($desktop) {
+    margin-top: rem(50);
+  }
+
+}//.form-actions

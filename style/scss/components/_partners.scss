@@ -1,0 +1,127 @@
+.partners {
+  @include grid-container;
+  @include spacing(padding);
+  padding-left: 0;
+  padding-right: 0;
+
+  @include mq($tablet) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .logos {
+    @include no-bullet;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @include mq($desktop) {
+      padding-top: rem(30);
+    }
+
+    > li {
+      width: cols(12);
+      padding: 0 cols(1);
+      margin: 0 0 rem(30);
+
+      @include mq($tablet) {
+        margin-bottom: rem(70);
+        width: cols(8);
+        padding: 0 cols(2);
+
+        &:last-child,
+        &:nth-last-child(2),
+        &:nth-last-child(3) {
+
+          @include mq($tablet) {
+            margin-bottom: 0;
+          }
+
+        }
+
+      }//li
+
+      // increase size of some logos
+      &:nth-child(2),
+      &:nth-child(3) {
+
+        @include mq($tablet) {
+          padding: 0 cols(1.4);
+        }
+
+      }
+
+      // decrease size of some logos
+      &:last-child {
+
+        @include mq($tablet) {
+          padding: 0 cols(2.4);
+        }
+
+      }
+
+      > a {
+        display: block;
+        margin: 0 auto;
+        @include hide-text;
+        @include background-cover;
+
+        &.aetc {
+          background-image: url($images-path + 'logo-aetc.png');
+          @include aspect-ratio(percentage(230/600));
+        }
+
+        &.iit {
+          background-image: url($images-path + 'logo-inittogether.svg');
+          @include aspect-ratio(percentage(91/402));
+        }
+
+        &.hh {
+          background-image: url($images-path + 'logo-hishealth.svg');
+          @include aspect-ratio(percentage(64/264));
+        }
+
+        &.cqii {
+          background-image: url($images-path + 'logo-cqii.svg');
+          @include aspect-ratio(percentage(246/1000));
+        }
+
+        &.ace {
+          background-image: url($images-path + 'logo-ace.svg');
+          @include aspect-ratio(percentage(141/225));
+          width: 70%;
+        }
+
+        &.ihip {
+          background-image: url($images-path + 'logo-ihip.svg');
+          @include aspect-ratio(percentage(355/1000));
+        }
+
+        &.chatt {
+          background-image: url($images-path + 'logo-chatt.svg');
+          @include aspect-ratio(percentage(250/600));
+        }
+
+        &.ihap {
+          background-image: url($images-path + 'logo-ihap.svg');
+          @include aspect-ratio(percentage(216/1000));
+        }
+
+        &.wv {
+          background-image: url($images-path + 'logo-wellversed.svg');
+          @include aspect-ratio(percentage(120/466));
+        }
+
+        &.deii {
+          background-image: url($images-path + 'logo-deii.svg');
+          @include aspect-ratio(percentage(111/217));
+        }
+
+      }// >a
+
+    }// >li
+
+  }//.logos
+
+}//.partners

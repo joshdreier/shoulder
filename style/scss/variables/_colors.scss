@@ -1,0 +1,41 @@
+// http://www.color-blindness.com/color-name-hue/
+
+// basics
+$white: #FFFFFF;
+$black: #000000;
+
+// grays
+$alto: #dddddd;               // footer logo
+$dim-grey: #666666;           // grey text
+$empress: #767676;            // lightest gray for contrast
+$gainsboro: #e5e5e5;          // footer icons
+$nero: #212121;               // body text
+$night-rider: #313131;        // non-text blocky black
+$silver: #bbb;                // borders for tables with background
+$very-light-grey: #ccc;       // borders
+$white-smoke: #efefef;        // footer text
+$white-smoke2: #f5f5f5;       // backgrounds
+
+// blues
+$summer-sky: #1E88E5;         // logo, buttons
+$denim: #1879CD;              // links
+$egyptian-blue: #0D47A1;       // footer background
+
+// greens
+$persian-green: #009C8A;        // top nav, buttons
+
+// reds, yellow, orange, browns
+$red: #F40606;                // accents
+$blanched-almond: #FFE8CC;    //callouts
+
+// black opacity
+$black-light-transparent: rgba($black, 0.30);
+$black-transparent: rgba($black, 0.50);
+$black-dark-transparent: rgba($black, 0.70);
+
+// white opacity
+$white-transparent: rgba($white, 0.97);
+$white-transparent-hero: rgba($white, 0.70);
+
+// red opacity
+$red-transparent: rgba($red, 0.88); // video play button

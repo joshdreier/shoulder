@@ -1,0 +1,12 @@
+@mixin remove-button-styles {
+  position: static;
+  width: auto;
+  height: auto;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  line-height: inherit;
+  text-align: inherit;
+  color: $black;
+  outline: 0;
+}

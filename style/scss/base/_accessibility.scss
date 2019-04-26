@@ -1,0 +1,37 @@
+.visually-hidden,
+.element-invisible {
+  @include visually-hidden();
+}
+
+// all focusable elements
+a[href],
+button,
+input,
+select,
+textarea,
+object {
+  @include outline;
+}
+
+// Skip Link
+.skip-link {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 15px;
+  z-index: 9999;
+  background: $red;
+  color: $white;
+  text-decoration: none;
+  font-weight: bold;
+
+  @include hover {
+    text-decoration: none;
+  }
+
+  &:not(:focus) {
+    @include visually-hidden();
+  }
+
+}//.skip-link

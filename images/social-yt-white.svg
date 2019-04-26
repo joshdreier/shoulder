@@ -1,0 +1,25 @@
+
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-0.8%" y="-1.9%" width="101.6%" height="103.8%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage" transform="translate(-1361.000000, -665.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Circle" filter="url(#filter-1)" transform="translate(-50.000000, 106.000000)">
+                <g id="Social" transform="translate(42.000000, 0.111811)">
+                    <g id="youtube-square-brands-(1)" transform="translate(1369.000000, 558.888189)">
+                        <path d="M16.6785714,15.1875 L25.1785714,20.0178571 L16.6785714,24.8482143 L16.6785714,15.1875 Z M40,4.28571429 L40,35.7142857 C40,38.0803571 38.0803571,40 35.7142857,40 L4.28571429,40 C1.91964286,40 0,38.0803571 0,35.7142857 L0,4.28571429 C0,1.91964286 1.91964286,0 4.28571429,0 L35.7142857,0 C38.0803571,0 40,1.91964286 40,4.28571429 Z M36.25,20.0267857 C36.25,20.0267857 36.25,14.7053571 35.5714286,12.1517857 C35.1964286,10.7410714 34.0982143,9.63392857 32.6964286,9.25892857 C30.1696429,8.57142857 20,8.57142857 20,8.57142857 C20,8.57142857 9.83035714,8.57142857 7.30357143,9.25892857 C5.90178571,9.63392857 4.80357143,10.7410714 4.42857143,12.1517857 C3.75,14.6964286 3.75,20.0267857 3.75,20.0267857 C3.75,20.0267857 3.75,25.3482143 4.42857143,27.9017857 C4.80357143,29.3125 5.90178571,30.375 7.30357143,30.75 C9.83035714,31.4285714 20,31.4285714 20,31.4285714 C20,31.4285714 30.1696429,31.4285714 32.6964286,30.7410714 C34.0982143,30.3660714 35.1964286,29.3035714 35.5714286,27.8928571 C36.25,25.3482143 36.25,20.0267857 36.25,20.0267857 L36.25,20.0267857 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

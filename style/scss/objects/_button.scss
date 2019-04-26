@@ -1,0 +1,9 @@
+.button {
+  @include button;
+}
+
+.forum-create-link-new {
+  a {
+    @include button;
+  }
+}

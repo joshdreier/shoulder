@@ -1,0 +1,50 @@
+/**
+* Animation Mixins
+*/
+@mixin fade-in() {
+  animation: fade-in $transition-duration-default $transition-easing-default;
+}
+
+@mixin search-open() {
+  animation: search-open $transition-duration-default $transition-easing-default;
+}
+
+@mixin sub-menu-down() {
+  animation: sub-menu-down $transition-duration-default $transition-easing-default;
+}
+
+// KEYFRAMES
+
+// Opacity Fade In
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Mobile - Search menu slide down
+@keyframes search-open {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 104px;
+  }
+}
+
+// SubMenu Slide Down
+@keyframes sub-menu-down {
+  from {
+    opacity: 0;
+    top: 0;
+  }
+  to {
+    opacity: 1;
+    top: 60px;
+  }
+}

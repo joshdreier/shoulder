@@ -1,0 +1,96 @@
+.addthis-smartlayers {
+
+  #at4-share,
+  #at-share-dock {
+
+    // hide share this for all pages, and then display manually
+    display: none !important;
+
+    body.mobile-nav-open {
+      z-index: -1 !important;
+    }
+
+    body.search-bar-open & {
+
+      @include mq($tablet-only) {
+        z-index: 10 !important;
+      }
+
+    }
+
+    @include mq($tablet) {
+      top: 201px !important;
+    }
+
+    @include mq($desktop) {
+      top: 296px !important;
+    }
+
+    @include mq($desktop-med) {
+      top: 309px !important;
+    }
+
+    @include mq($desktop-plus) {
+      top: 317px !important;
+    }
+
+    > a {
+      border: solid 1px $very-light-grey;
+
+      @include mq($tablet) {
+
+        &:nth-child(2) {
+          top: -1px !important;
+        }
+
+        &:nth-child(3) {
+          top: -2px !important;
+        }
+
+        &:nth-child(4) {
+          top: -3px !important;
+        }
+
+        &:nth-child(5) {
+          top: -4px !important;
+        }
+
+        &:nth-child(6) {
+          top: -5px !important;
+        }
+
+      }// desktop
+
+    }//> a
+
+  }//#at4-share
+
+}//.addthis-smartlayers
+
+.node-type-event,
+.node-type-article,
+.node-type-news-article,
+.node-type-resource,
+.node-type-ta-program,
+.node-type-curriculum {
+
+  #at4-share,
+  #at-share-dock  {
+    display: flex !important;
+
+    @include mq($tablet) {
+      display: block !important;
+    }
+
+    // FIX me (tablet touch display issues)
+    @include mq($tablet-only) {
+
+      .no-pointerevents & {
+        display: none !important;
+      }
+
+    }
+
+  }
+
+}

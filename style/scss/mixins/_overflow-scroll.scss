@@ -1,0 +1,16 @@
+@mixin overflow-scroll($axis: null) {
+  @if ($axis == 'x') {
+    overflow-x: auto;
+  } @else {
+    overflow-y: auto;
+  }
+
+  .no-pointerevents & {
+    @if ($axis == 'x') {
+      overflow-x: scroll;
+    } @else {
+      overflow-y: scroll;
+    }
+    -webkit-overflow-scrolling: touch;
+  }
+}

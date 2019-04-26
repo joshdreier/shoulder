@@ -1,0 +1,11 @@
+// @mixin fit-container
+// Displays element as wide and tall as parent container
+// Requires "position: absolute, fixed, or relative" on parent container
+
+@mixin fit-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+} // @mixin fit-container

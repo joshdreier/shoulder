@@ -1,0 +1,169 @@
+// remove max-width for home hero to stretch fullbleed
+
+.hero {
+  position: relative;
+  @include background-cover;
+  background-image: url($images-path + 'hero-drpaul.jpg');
+  background-position: center top;
+
+  @include mq($tablet) {
+    display: flex;
+    padding-top: 26px;
+  }
+
+  @include mq($desktop) {
+    padding-top: 0;
+    min-height: 634px;
+  }
+
+  &::before {
+    content: '';
+    @include fit-container;
+
+
+    @include mq($desktop) {
+      background: linear-gradient(to right, rgba($black, 0.60) 14%,rgba($black, 0) 60%);
+    }
+
+    @include mq($desktop-med) {
+      background: linear-gradient(to right, rgba($black, 0.60) 24%, rgba($black, 0) 40%);
+    }
+
+  }
+
+  &::after {
+    content: '';
+    @include fit-container;
+    background: linear-gradient(to top, rgba($black, 0.60) 0%, rgba($black, 0) 20%);
+  }
+
+  &-title {
+    display: none;
+  }
+
+  &-text {
+    align-self: center;
+
+    @include mq($mobile) {
+      padding: $gutter-mobile;
+    }
+
+  }
+
+  .hero-container {
+    @include grid-container;
+    position: relative;
+  }
+
+  .mission {
+    color: $white;
+    position: relative;
+    z-index: 1;
+    padding-top: rem(20);
+
+    @include mq($desktop) {
+      max-width: 40%;
+      padding-top: rem(40);
+    }
+
+    @include mq($desktop-med) {
+      max-width: 35%;
+    }
+
+    @include mq($desktop-plus) {
+      max-width: 30%;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: rem(6);
+      letter-spacing: -.025em;
+      @include font(18);
+
+      @include mq($desktop) {
+        @include font(22);
+      }
+
+    }//h2
+
+    p,
+    %p,
+    ul,
+    ol,
+    li {
+      @include margin(rem(24) null);
+      @include font(15, 24);
+
+      @include mq($tablet) {
+        @include margin(rem(28) null);
+        @include font(16, 28);
+      }
+
+      @include mq($desktop) {
+        @include font(18, 28);
+      }
+
+    }//typography
+
+    a {
+      font-weight: bold;
+      color: $white;
+      text-decoration: underline;
+    }
+
+  }//.mission
+
+
+  .newsletter {
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    left: 50px;
+
+    fieldset {
+      position: relative;
+      width: 400px;
+      height: 50px;
+
+      label {
+        @include visually-hidden;
+      }
+    }
+
+    input[type=text],
+    input[type=email] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      border-radius: 8px;
+      background: $white-transparent-hero;
+      border: 0;
+      padding: 10px 140px 10px 15px;
+      @include font(20);
+      box-shadow: none;
+
+      @include placeholder {
+        color: $nero;
+      }
+
+    }
+
+    input[type=submit] {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      padding: rem(11) rem(15);
+      @include font(18);
+    }
+
+  }
+
+  .social-media-icons {
+    z-index: 1;
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+  }
+
+}//.hero

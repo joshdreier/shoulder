@@ -1,0 +1,36 @@
+// Site specific button mixins
+@mixin button ($btn-color: $summer-sky, $hover-btn-color: $denim, $text-color: $white, $hover-text-color: $white) {
+  display: inline-block;
+  height: auto;
+  padding: rem(15) 20px;
+  font-family: $roboto;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: $btn-color;
+  color: $text-color !important;
+  border-radius: 8px;
+  text-align: center;
+  @include font(20, 20);
+  background-clip: padding-box;
+  border: 0;
+
+  @include mq($tablet) {
+    padding: rem(17) 30px;
+    @include font(24, 24);
+  }
+
+  .sidebar & {
+    width: 100%;
+  }
+
+  @include mq($mobile) {
+    width: 100%;
+  }
+
+  @include hover {
+    text-decoration: none;
+    background-color: $hover-btn-color;
+    color: $hover-text-color !important;
+  }
+
+}

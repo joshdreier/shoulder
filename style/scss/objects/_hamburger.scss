@@ -1,0 +1,109 @@
+%hamburger-menu {
+  @include remove-button-styles;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  background: $white-transparent;
+
+  @include mq($tablet) {
+    width: 90px;
+    height: 90px;
+  }
+
+  @include mq($desktop) {
+    display: none;
+  }
+
+  .icon {
+    display: block;
+    width: 25px;
+    height: 15px;
+    position: relative;
+    transform: rotate(0deg);
+    @include transition;
+
+    @include mq($tablet) {
+      width: 32px;
+      height: 20px;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $denim;
+      opacity: 1;
+      left: $gutter-mobile;
+      transform: rotate(0deg);
+      @include transition;
+      @include fade-in;
+
+      @include mq($tablet) {
+        left: 30px;
+        height: 4px;
+      }
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 6px;
+
+        @include mq($tablet) {
+          top: 8px;
+        }
+
+      }
+
+      &:nth-child(4) {
+        top: 12px;
+
+        @include mq($tablet) {
+          top: 16px;
+        }
+
+      }
+
+    }//span
+
+  }//.icon
+
+  /**
+   * Close
+   */
+  &.active {
+
+    .icon {
+
+      span {
+        @include hide-text;
+
+        &:nth-child(1) {
+          display: none;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+
+        &:nth-child(4) {
+          display: none;
+        }
+
+      }//span
+
+    }//.icon
+
+  }//&.close
+
+}//.mobile-menu-toggle

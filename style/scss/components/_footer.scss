@@ -1,0 +1,230 @@
+footer#footer {
+  @include clearfix;
+  background: $egyptian-blue;
+  color: $white;
+  padding: 30px 0 60px;
+
+  @include mq($tablet) {
+    padding: 50px 0;
+  }
+
+  @include mq($desktop-med) {
+    padding: 50px 0;
+  }
+
+  @include mq($desktop-plus) {
+    padding: 60px 0;
+  }
+
+  .footer-top {
+    position: relative;
+  }
+
+  h2 {
+    @include visually-hidden;
+  }
+
+  a {
+    color: $white-smoke;
+    transform: translate3d(0,0,0);
+
+    @include hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  li {
+
+    @include mq($tablet) {
+      @include font(15, 18);
+    }
+
+    @include mq($desktop) {
+      @include font(16, 20);
+    }
+
+  }
+
+  .menu-block-wrapper {
+
+    > .menu {
+
+      @include mq($desktop) {
+        display: flex;
+      }
+
+      > li {
+
+        @include mq($desktop) {
+          width: percentage(1/5);
+          padding-right: 2%;
+        }
+
+        // hide home
+        &.first {
+          display: none;
+        }
+
+        > a {
+          display: inline-block;
+          padding: 10px 0;
+          font-weight: bold;
+        }//> a
+
+        // SUBMENU
+        > .menu {
+
+          @include mq($tablet-max) {
+            display: none;
+          }
+
+          > li {
+
+            > a {
+              display: inline-block;
+              padding: 10px 0;
+            }
+
+          }//> li
+
+        }// >.menu
+
+      }//> li
+
+    }// >.menu
+
+  }//.menu-block-wrapper
+
+  .footer-follow {
+    position: absolute;
+
+    @include mq($mobile) {
+      top: -2px;
+    }
+
+    @include mq($tablet-only) {
+      top: -5px;
+    }
+
+    @include mq($tablet-max) {
+      right: 0;
+    }
+
+    @include mq($desktop) {
+      bottom: 10px;
+      left: 80%;
+    }
+
+  }//.footer-follow
+
+  .footer-logo {
+    display: block;
+    position: relative;
+    margin-bottom: 30px;
+    @include background-cover;
+    @include hide-text;
+    @include transition;
+    background-image: url($images-path + 'logo-targethiv-white.svg');
+    width: 130px;
+    height: 39px;
+
+    @include mq($tablet-only) {
+      width: 180px;
+      height: 54px;
+    }
+
+    @include mq($desktop) {
+      width: 210px;
+      height: 63px;
+    }
+
+    @include mq($desktop-plus) {
+      width: 238px;
+      height: 72px;
+    }
+
+  }//.footer-logo
+
+  .copyright-container {
+    @include font(12);
+    margin-top: 50px;
+
+    @include mq($tablet) {
+      display: flex;
+      position: relative;
+    }
+
+    @include mq($desktop) {
+      margin-top: 90px;
+    }
+
+    .copyright {
+
+      @include mq($tablet) {
+        width: 60%;
+      }
+
+      @include mq($desktop) {
+        width: 72%;
+      }
+
+      p {
+        color: $white-smoke;
+        @include font(13);
+
+        @include mq($ipad) {
+          @include font(14);
+        }
+
+      }
+
+    }//.copyright
+
+    .logo {
+      @include mq($mobile) {
+        margin-bottom: 10px;
+      }
+
+      @include mq($tablet) {
+        position: absolute;
+        top: 7px;
+        right: 32px;
+      }
+
+      @include mq($desktop) {
+        bottom: 5px;
+        left: 80%;
+      }
+
+      a {
+        display: block;
+        @include background-cover;
+        @include hide-text;
+        background-image: url($images-path + 'logo-hrsa.svg');
+        width: 112px;
+        height: 30px;
+        @include transition;
+
+        @include mq($tablet) {
+          width: 150px;
+          height: 40px;
+        }
+
+        @include mq($desktop) {
+          width: 175px;
+          height: 47px;
+        }
+
+        @include mq($desktop-med) {
+          width: 200px;
+          height: 54px;
+        }
+
+      }//a
+
+    }//.logo
+
+  }//.copyright-container
+
+}//footer

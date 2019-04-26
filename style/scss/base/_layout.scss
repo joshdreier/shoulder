@@ -1,0 +1,84 @@
+// GLOBAL LAYOUT ELEMENTS
+html,
+body {
+  overflow-x: hidden;
+}
+
+main#main {
+  @include clearfix;
+  min-height: 500px;
+
+  @include mq($mobile) {
+    margin-top: 30px;
+  }
+
+  @include mq($tablet-max) {
+    position: relative;
+    z-index: 2;
+    background: $white;
+    min-height: 300px;
+  }
+
+  // desktop sticky nav
+  body.fixed-nav & {
+
+    @include mq($desktop) {
+      padding-top: 60px;
+    }
+
+  }//.mobile-nav-open &
+
+}//main#main
+
+article {
+  @include grid-container;
+}
+
+.layout-container {
+  position: relative;
+  left: 0;
+  margin: 0 auto;
+  @include transition;
+
+  // mobil nav open
+  body.mobile-nav-open & {
+
+    @include mq($tablet-max) {
+      position: fixed;
+      width: 100%;
+    }
+
+  }//.mobile-nav-open &
+
+}//.layout-container
+
+.layout-inner-container {
+  position: relative;
+  @include grid-container;
+}//.grid-container
+
+figure,
+.image {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.thumb-list {
+
+  .views-row {
+    margin-bottom: rem(30);
+
+    @include mq($tablet) {
+      margin-bottom: rem(40);
+    }
+
+    @include mq($desktop-plus) {
+      margin-bottom: rem(56);
+    }
+
+  }
+
+}//.thumb-list

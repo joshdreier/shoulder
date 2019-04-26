@@ -1,0 +1,46 @@
+// iHIP Sidebar /ihip
+
+#iHiPbadge {
+
+  ~ textarea {
+    width: 100%;
+    @include font(12);
+    overflow: visible !important;
+  }
+
+}
+
+.e2ma_signup_form {
+
+  .e2ma_signup_message,
+  .e2ma_signup_form_row,
+  .e2ma_signup_form_required_footnote {
+    margin: rem(10) 0;
+  }//.e2ma_signup_form_row
+
+  .e2ma_signup_form_label {
+    @extend %label;
+  }
+
+  input[type="text"],
+  input[type=email] {
+    width: 100%;
+  }
+
+  #e2ma_signup_reset_button {
+    display: none;
+  }
+
+  .e2ma_signup_form_button_row {
+    padding-top: rem(10);
+    max-height: 60px;
+
+    @include mq($tablet) {
+      max-height: 70px;
+    }
+
+  }
+
+}//.e2ma_signup_form
+
+

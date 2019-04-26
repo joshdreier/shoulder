@@ -1,0 +1,25 @@
+.breadcrumb {
+  position: relative;
+  padding: rem(34) 0;
+  margin-bottom: rem(20);
+  font-family: $roboto;
+  font-weight: normal;
+  @include font(16, 18);
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include mq($mobile) {
+    display: none;
+  }
+
+  @include mq($tablet-only) {
+    left: -50px;
+  }
+
+  @include mq($desktop) {
+    @include font(18, 20);
+  }
+
+}//.breadcrumb

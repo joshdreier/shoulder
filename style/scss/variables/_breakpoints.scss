@@ -1,0 +1,16 @@
+// Minimum Width Breakpoints
+$mobile: 'screen and (max-width: 619px)';
+$tablet: 'screen and (min-width: 620px)';
+$ipad: 'screen and (min-width: 768px)';
+$desktop: 'screen and (min-width: 1024px)';
+$desktop-med: 'screen and (min-width: 1212px)';
+$desktop-plus: 'screen and (min-width: 1350px)';
+
+// Maximum Width Breakpoints
+$tablet-max: 'screen and (max-width: 1023px)';
+$ipad-max: 'screen and (max-width: 767px)';
+$desktop-max: 'screen and (max-width: 1279px)';
+
+// Min/Max Width Breakpoints
+$tablet-only: 'screen and (min-width: 620px) and (max-width: 1023px)';
+$desktop-only: 'screen and (min-width: 1024px) and (max-width: 1279px)';

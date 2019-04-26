@@ -1,0 +1,45 @@
+// @mixin aspect-ratio()
+// Displays element as having a fixed aspect ratio (width:height)
+// $padding argument should be determined with the calculation: percentage("container height" / "container width")
+// $inner argument is class name for elements within the aspect ratio that should fit the container
+// Example: @include aspect-ratio(percentage(9/16), '.field--name-field-image');
+
+@mixin aspect-ratio($height, $inner: null) {
+  display: block;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: $height;
+  } // &::after
+
+  @if $inner {
+    > #{$inner} {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    } // > #{$inner}
+  } // @if $inner
+} // @mixin aspect-ratio
+
+// @mixin remove-aspect-ratio()
+// remove styles above
+@mixin remove-aspect-ratio($inner) {
+
+  &::after {
+    display: none;
+  } // &::after
+
+  @if $inner {
+    > #{$inner} {
+      position: static;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    } // > #{$inner}
+  } // @if $inner
+} // @mixin aspect-ratio

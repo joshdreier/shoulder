@@ -1,0 +1,103 @@
+// @mixin icon()
+// This mixin adds an icon centered inside a container.
+// The container must have position: absolute, fixed, or relative.
+// To override, after @include icon() add styles to &::before {}
+
+@mixin icon($width: null, $height: null, $image: null, $hover-image: null, $icon-transform: null, $origin: center) {
+  @if ($image) {
+    position: relative;
+
+    @if ($width) {
+      width: $width;
+    }
+
+    @if ($height) {
+      height: $height;
+    }
+
+  }
+
+  &::before {
+    @if ($width) {
+      width: $width;
+    }
+
+    @if ($height) {
+      height: $height;
+    }
+
+    @if ($image) {
+      content: '';
+      display: block;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-image: url($images-path + $image);
+      @include background-cover;
+      @include hide-text;
+      transform-origin: $origin;
+      transition:
+        width $transition-duration-default $transition-easing-default,
+        height $transition-duration-default $transition-easing-default,
+        opacity $transition-duration-default $transition-easing-default,
+        transform $transition-duration-default $transition-easing-default;
+    }
+
+    @if ($icon-transform) {
+      transform: $icon-transform;
+    }
+    @else {
+      transform: translate(-50%, -50%);
+    }
+  } // &::before
+
+  &::after {
+    @if ($width) {
+      width: $width;
+    }
+
+    @if ($height) {
+      height: $height;
+    }
+  }
+
+  @if ($hover-image) {
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-image: url($images-path + $hover-image);
+      @include background-cover;
+      opacity: 0;
+      @include hide-text;
+      transform-origin: $origin;
+      transition:
+        width $transition-duration-default $transition-easing-default,
+        height $transition-duration-default $transition-easing-default,
+        opacity $transition-duration-default $transition-easing-default,
+        transform $transition-duration-default $transition-easing-default;
+
+      @if ($icon-transform) {
+        transform: $icon-transform;
+      }
+      @else {
+        transform: translate(-50%, -50%);
+      }
+    } // &::after
+
+    @include hover {
+
+      &::before {
+        opacity: 0;
+      } // &::after
+
+      &::after {
+        opacity: 1;
+      } // &::after
+    } // &:hover
+  }
+} // @mixin icon

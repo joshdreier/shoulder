@@ -1,0 +1,25 @@
+@mixin bkg-stretch($color: $white-smoke) {
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    background: $color;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    background: $color;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+  }
+
+}

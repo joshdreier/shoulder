@@ -1,0 +1,127 @@
+// consistent spacing between components
+@mixin spacing($spacing: margin, $position: vertical) {
+  @if $spacing == 'margin' {
+    // collapsible top/bottom margin
+    @if $position == 'vertical' {
+      @include margin(rem(40) null);
+
+      @include mq($tablet) {
+        @include margin(rem(60) null);
+      }
+
+      @include mq($desktop-plus) {
+        @include margin(rem(80) null);
+      }
+    }
+
+    // collapsible top margin
+    @else if $position == 'top' {
+      margin-top: rem(40);
+
+      @include mq($tablet) {
+        margin-top: rem(60);
+      }
+
+      @include mq($desktop) {
+        margin-top: rem(70);
+      }
+
+      @include mq($desktop-plus) {
+        margin-top: rem(80);
+      }
+    }
+
+    // collapsible bottom margin
+    @else if $position == 'bottom' {
+      margin-bottom: rem(40);
+
+      @include mq($tablet) {
+        margin-bottom: rem(60);
+      }
+
+      @include mq($desktop) {
+        margin-bottom: rem(70);
+      }
+
+      @include mq($desktop-plus) {
+        margin-bottom: rem(80);
+      }
+    }
+  }
+
+  @else if $spacing == 'padding' {
+    // top/bottom padding with backgrounds
+    @if $position == 'vertical' {
+      @include padding(rem(30) null);
+
+      @include mq($tablet) {
+        @include padding(rem(40) null);
+      }
+
+      @include mq($desktop) {
+        @include padding(rem(50) null);
+      }
+
+      @include mq($desktop-plus) {
+        @include padding(rem(60) null);
+      }
+    }
+
+    // top padding with backgrounds
+    @else if $position == 'top' {
+      padding-top: rem(30);
+
+      @include mq($tablet) {
+        padding-top: rem(40);
+      }
+
+      @include mq($desktop) {
+        padding-top: rem(50);
+      }
+
+      @include mq($desktop-plus) {
+        padding-top: rem(60);
+      }
+    }
+
+    // bottom padding with backgrounds
+    @else if $position == 'bottom' {
+      padding-bottom: rem(30);
+
+      @include mq($tablet) {
+        padding-bottom: rem(40);
+      }
+
+      @include mq($desktop) {
+        padding-bottom: rem(50);
+      }
+
+      @include mq($desktop-plus) {
+        padding-bottom: rem(60);
+      }
+    }
+  }
+
+  @else if $spacing == 'border' {
+    border-bottom: solid 1px $very-light-grey;
+    @include margin(rem(30) null);
+    @include padding(0 null rem(30));
+
+    @include mq($tablet) {
+      @include margin(rem(40) null);
+      @include padding(0 null rem(40));
+    }
+
+    @include mq($desktop) {
+      @include margin(rem(50) null);
+      @include padding(0 null rem(50));
+    }
+
+    @include mq($desktop-plus) {
+      @include margin(rem(60) null);
+      @include padding(0 null rem(60));
+    }
+
+  }//border
+
+}

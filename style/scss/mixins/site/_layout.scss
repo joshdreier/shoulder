@@ -1,0 +1,20 @@
+// Site specific layout mixins
+
+@mixin grid-container {
+  @include clearfix;
+  max-width: $layout-max-width;
+  @include margin(null auto);
+  @include padding(null $gutter-mobile);
+  width: 100%;
+
+  @include mq($tablet) {
+    @include padding(null $gutter-desktop);
+  }
+
+}
+
+@mixin max-width-container {
+  max-width: $layout-max-width;
+  @include margin(null auto);
+}
+

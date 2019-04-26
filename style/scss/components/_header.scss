@@ -1,0 +1,153 @@
+#header {
+  width: 100%;
+  @include grid-container;
+
+  @include mq($mobile) {
+    height: $hdr-height-mobile;
+  }
+
+  @include mq($tablet-only) {
+    height: $hdr-height-tablet;
+  }
+
+  @include mq($tablet-max) {
+    //position: fixed;
+    z-index: 100;
+    background: $white-transparent;
+    border-bottom: solid 1px $white-smoke;
+    overflow: hidden;
+  }
+
+  @include mq($desktop) {
+    display: flex;
+    align-items: flex-end;
+    height: $hdr-height-desktop;
+    padding-bottom: rem(20);
+  }
+
+  // remove gutter for sticky header weirdness
+  .layout-inner-container {
+
+    @include mq($tablet) {
+      padding: 0;
+    }
+
+  }//.layout-inner-container
+
+  .logo {
+    position: relative;
+    @include background-cover;
+    @include hide-text;
+    @include transition;
+    display: block;
+    background-image: url($images-path + 'logo.svg');
+    width: 220px;
+    height: 70px;
+    background-size: 220px auto;
+    background-position: center left;
+
+    @include mq($tablet) {
+      width: 300px;
+      height: 90px;
+      background-size: 300px auto;
+    }
+
+    @include mq($desktop) {
+      margin-bottom: 1px;
+      height: 106px;
+      margin-right: auto;
+      background-position: bottom left;
+    }
+
+    @include mq($desktop-med) {
+      margin-bottom: 2px;
+      width: 400px;
+      background-size: 400px auto;
+    }
+
+    @include mq($desktop-plus) {
+      width: 480px;
+      background-size: 480px auto;
+    }
+
+  }//#logo
+
+
+  .hamburger-menu {
+    @extend %hamburger-menu;
+
+    // white mask
+    .mobile-nav-open & {
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: $white-transparent;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        width: 1000%;
+      }
+
+    }//.mobile-nav-open &
+
+  }//.hamburger-menu
+
+  .topnav {
+    display: none;
+
+    @include mq($desktop) {
+      display: block;
+    }
+
+    @include mq($tablet) {
+      align-self: flex-end;
+    }
+
+    > ul {
+      display: flex;
+
+      li {
+        color: $denim;
+        font-family: $lato;
+        font-weight: bold;
+        line-height: 1;
+        @include transition;
+        @include font(15);
+
+        @include mq($tablet) {
+          @include font(16);
+          margin-left: rem(14);
+        }
+
+        @include mq($desktop) {
+          @include font(16);
+          margin-left: rem(30);
+        }
+
+        @include mq($desktop-med) {
+          @include font(18);
+        }
+
+        @include mq($desktop-plus) {
+          @include font(20);
+        }
+
+        a {
+          color: $persian-green;
+          @include transition;
+          text-decoration: none;
+
+          @include hover {
+
+          }
+
+        }//a
+
+      }//li
+
+    }// > ul
+
+  }//.topnav
+
+}//#header

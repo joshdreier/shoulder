@@ -1,0 +1,44 @@
+//mailchimp specific styles
+
+.mc-field-group {
+
+  input[type=text],
+  input[type=email],
+  input[type=phone],
+  input[type=password],
+  textarea,
+  select {
+    width: 100%;
+  }
+
+  &.input-group {
+
+    > strong {
+      display: block;
+      margin-bottom: rem(20);
+    }
+
+    > ul {
+      padding: 0;
+      margin: 0;
+    }
+
+  }//&.input-group
+
+}//.mc-field-group
+
+.indicates-required {
+  color: $empress;
+  font-style: italic;
+  text-align: right;
+  @include font(13);
+
+  @include mq($tablet) {
+    @include font(15);
+  }
+
+}//.indicates-required
+
+#mc-embedded-subscribe {
+  margin-top: rem(20);
+}

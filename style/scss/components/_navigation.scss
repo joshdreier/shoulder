@@ -1,0 +1,402 @@
+#top-menu {
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  @include mq($tablet-max) {
+    display: none;
+    @include fade-in;
+    position: fixed;
+    background: $white;
+    bottom: 0;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    .mobile-nav-open & {
+      display: block;
+    }
+
+  }
+
+  @include mq($desktop) {
+    @include bkg-stretch($white-smoke);
+    @include max-width-container;
+    position: relative;
+    top: 0;
+    display: block;
+    padding: 0 80px;
+    max-width: $layout-max-width;
+    background: $white-smoke;
+  }
+
+  .menu-block-wrapper {
+
+    @include mq($mobile) {
+      padding-top: $hdr-height-mobile;
+      padding-bottom: 50px;
+    }
+
+    @include mq($tablet-only) {
+      padding-top: $hdr-height-tablet;
+    }
+
+    > .menu {
+      display: flex;
+      flex-flow: row;
+
+      @include mq($tablet-max) {
+        flex-flow: column;
+      }
+
+      @include mq($desktop) {
+        flex-flow: row;
+        justify-content: space-between;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+
+      // GLOBAL LINK
+      a {
+        display: inline-block;
+        @include transition;
+
+        @include hover {
+          color: $summer-sky;
+          text-decoration: none;
+        }
+
+      }//a
+
+      // TOP LEVEL //////////////////////////////////
+
+      //home link
+      > li.first {
+        display: none;
+      }
+
+      > li:not(.first) {
+
+        @include mq($tablet-max) {
+          margin-bottom: 30px;
+        }
+
+        @include mq($desktop) {
+          position: relative;
+          font-weight: normal;
+          text-transform: uppercase;
+          @include font(20, 20);
+          @include bkg-stretch;
+        }
+
+        > a {
+
+          @include mq($mobile) {
+            padding: 15px $gutter-mobile;
+          }
+
+          @include mq($tablet) {
+            padding: 15px 30px;
+          }
+
+          @include mq($tablet-max) {
+            display: inline-block;
+            font-weight: normal;
+            text-transform: uppercase;
+            @include font(16, 16);
+            color: $denim
+          }
+
+          @include mq($desktop) {
+            position: relative;
+            display: block;
+            padding: 20px;
+            z-index: 6;
+            background: $white-smoke;
+          }//desktop
+
+        }//> a
+
+        // right align submenu
+        &:last-child {
+
+          @include mq($desktop) {
+
+            > .menu {
+              left: auto;
+              right: -10px;
+              padding-right: 30px;
+              padding-left: 30px;
+
+              > li {
+                text-align: right;
+              }
+
+            }//> .menu
+
+          }//desktop
+
+        }//&:last-child
+
+
+        // ACCESSIBILITY TOGGLE BUTTONS /////
+
+        > button {
+          position: absolute;
+          z-index: 100;
+          width: 100%;
+          padding: rem(10);
+          border-radius: 8px;
+          font-family: $sans-serif;
+          @include font(16, 20);
+          background: $denim;
+          color: $white;
+
+          @include mq($tablet-max) {
+            display: none;
+          }
+
+          &:not(:focus) {
+            @include visually-hidden();
+          }
+
+        }//> button
+
+
+        // SUBMENU //////////////////////////
+
+        > .menu {
+          @include clearfix;
+
+          // grid for mobile
+          @supports (display: grid) {
+
+            @include mq($mobile) {
+              padding: 0 $gutter-mobile;
+            }
+
+            @include mq($tablet) {
+              padding: 0 30px;
+            }
+
+            @include mq($tablet-max) {
+              display: grid;
+              grid-template-columns: repeat( auto-fit, minmax(157px, 1fr) );
+              grid-column-gap: 5px;
+              max-width: 100%;
+
+              > li {
+                position: relative;
+                min-height: 50px;
+                background: $white-smoke;
+                @include transition;
+
+                > a {
+                  @include fit-container;
+                  @include vertical-align-flex;
+                }
+
+                @include hover {
+                  background: $denim;
+
+                  a {
+                    color: $white;
+                  }
+
+                }//hover
+
+              }// >li
+
+            }// tablet-max
+
+          }// supports grid
+
+          @include mq($desktop) {
+            display: none;
+            @include sub-menu-down;
+            position: absolute;
+            left: -10px;
+            top: 60px;
+            z-index: 1;
+            padding: 2px 20px 18px 30px;
+            background: $white-smoke;
+            box-shadow: 1px 2px 8px 4px rgba(0,0,0,0.13);
+            min-width: 300px;
+
+            &.active {
+              display: block;
+            }
+
+            // shadow mask
+            &::before {
+              content: '';
+              position: absolute;
+              z-index: 5;
+              background: $white-smoke;
+              top: -10px;
+              left: 0;
+              width: 100%;
+              height: 10px;
+            }
+
+          }//desktop
+
+          > li {
+
+            @include mq($tablet-max) {
+              margin-bottom: 5px !important;
+
+              > a {
+                text-align: center;
+              }
+            }
+
+            @include mq($desktop) {
+              text-align: left;
+              font-weight: normal;
+              @include font(18, 22);
+              text-transform: none;
+            }
+
+            // float if no grid
+            @supports not (display: grid) {
+
+              @include mq($tablet-max) {
+                float: left;
+                padding-left: 5px;
+
+                > a {
+                  background: $white-smoke;
+                  min-height: 50px;
+                  @include vertical-align-flex;
+
+                  @include hover {
+                    background: $denim;
+                    color: $white;
+                  }
+
+                }//hover
+
+              }//tablet-max
+
+              // 2 columns
+              @include mq($mobile) {
+                width: 50%;
+
+                &:nth-child(even) {
+                  padding-right: $gutter-mobile;
+                }
+
+                &:nth-child(odd) {
+                  clear: left;
+                  padding-left: $gutter-mobile;
+                }
+
+              }//mobile
+
+              // 3 columns
+              @include mq($tablet) {
+                width: percentage(1/3);
+
+                &:nth-child(3n+3) {
+                  padding-right: 30px;
+                }
+
+                &:nth-child(3n+1) {
+                  clear: left;
+                  padding-left: 30px;
+                }
+
+              }//tablet
+
+            }//no grid
+
+            > a {
+
+              @include mq($tablet-max) {
+                font-weight: normal;
+                @include font(15, 17);
+                padding: 5px 10px;
+              }
+
+              @include mq($desktop) {
+                display: block;
+                padding: 8px 0;
+              }
+
+            }//>a
+
+          }// >li
+
+        }//> .menu
+
+      }//>li
+
+    }//>.menu
+
+  }//.menu-block-wrapper
+
+  // STICKY NAV ////////////////////////////
+
+  &.fixed {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: $layout-max-width;
+    @include fade-in;
+
+    .logged-in & {
+      top: 29px;
+
+       // logo fix
+      .menu-block-wrapper {
+        > .menu {
+          > li {
+            &.first {
+              > a {
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }//.logged-in &
+
+    // logo
+    .menu-block-wrapper {
+
+      > .menu {
+        width: 92%;
+        float: right;
+
+        > li {
+
+          // logo
+          &.first {
+            display: block;
+
+            > a {
+              display: block;
+              width: 123px;
+              height: 60px;
+              background: url($images-path + 'logo-targethiv.svg') left 6px no-repeat;
+              background-size: 123px 37px;
+              @include hide-text;
+              position: absolute;
+              top: 0;
+              left: 80px;
+              z-index: 6;
+            }
+
+          }//&.first
+
+        }//> li
+
+      }//> .menu
+
+    }//.menu-block-wrapper
+
+  }//&.fixed
+
+}//#top-menu
