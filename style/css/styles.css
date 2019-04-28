@@ -2363,7 +2363,7 @@ footer#footer {
   position: relative;
   background-position: center top;
   background: #efefef;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.875rem;
   margin-bottom: 2.5rem; }
   @media screen and (min-width: 620px) {
     .hero {
@@ -2916,163 +2916,84 @@ footer#footer {
           z-index: 6; }
 
 .partners {
-  max-width: 1540px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 20px;
-  padding-left: 20px;
-  width: 100%;
-  padding-top: 3.125rem;
-  padding-bottom: 3.125rem;
-  padding-left: 0;
-  padding-right: 0; }
-  .partners::after {
-    display: block;
-    clear: both;
-    content: "" !important; }
-  @media screen and (min-width: 620px) {
-    .partners {
-      padding-right: 50px;
-      padding-left: 50px; } }
-  @media screen and (min-width: 620px) {
-    .partners {
+  background: #dddddd; }
+  .partners nav {
+    max-width: 1540px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    padding: 1.25rem 0; }
+    .partners nav::after {
+      display: block;
+      clear: both;
+      content: "" !important; }
+    @media screen and (min-width: 620px) {
+      .partners nav {
+        padding-right: 50px;
+        padding-left: 50px; } }
+    @media screen and (min-width: 1024px) {
+      .partners nav {
+        padding-top: 3.125rem;
+        padding-bottom: 3.125rem; } }
+  @media screen and (min-width: 1024px) and (min-width: 620px) {
+    .partners nav {
       padding-top: 3.125rem;
       padding-bottom: 3.125rem; } }
-  @media screen and (min-width: 1024px) {
-    .partners {
+  @media screen and (min-width: 1024px) and (min-width: 1024px) {
+    .partners nav {
       padding-top: 3.125rem;
       padding-bottom: 3.125rem; } }
-  @media screen and (min-width: 1350px) {
-    .partners {
+  @media screen and (min-width: 1024px) and (min-width: 1350px) {
+    .partners nav {
       padding-top: 3.75rem;
       padding-bottom: 3.75rem; } }
-  @media screen and (min-width: 620px) {
-    .partners {
-      padding-left: 0;
-      padding-right: 0; } }
-  .partners .logos {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-align: center;
-        align-items: center; }
-    @media screen and (min-width: 1024px) {
-      .partners .logos {
-        padding-top: 1.875rem; } }
-    .partners .logos > li {
-      width: 50%;
-      padding: 0 4.16667%;
-      margin: 0 0 1.875rem; }
-      @media screen and (min-width: 620px) {
-        .partners .logos > li {
-          margin-bottom: 4.375rem;
-          width: 33.33333%;
-          padding: 0 8.33333%; } }
-  @media screen and (min-width: 620px) and (min-width: 620px) {
-    .partners .logos > li:last-child, .partners .logos > li:nth-last-child(2), .partners .logos > li:nth-last-child(3) {
-      margin-bottom: 0; } }
-      @media screen and (min-width: 620px) {
-        .partners .logos > li:nth-child(2), .partners .logos > li:nth-child(3) {
-          padding: 0 5.83333%; } }
-      @media screen and (min-width: 620px) {
-        .partners .logos > li:last-child {
-          padding: 0 10%; } }
-      .partners .logos > li > a {
+    .partners nav > ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center; }
+      @media screen and (min-width: 1024px) {
+        .partners nav > ul {
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap; } }
+      @media screen and (max-width: 1023px) {
+        .partners nav > ul > li {
+          padding: 1.25rem 2.5rem !important; } }
+      @media screen and (min-width: 1024px) {
+        .partners nav > ul > li {
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+          padding: 0 1.25rem; } }
+      @media screen and (min-width: 1212px) {
+        .partners nav > ul > li {
+          padding: 0 1.5rem; } }
+      @media screen and (min-width: 1350px) {
+        .partners nav > ul > li {
+          padding: 0 1.875rem; } }
+      .partners nav > ul > li:first-child {
+        padding-left: 0; }
+      .partners nav > ul > li:last-child {
+        padding-right: 0; }
+      .partners nav > ul > li img {
+        width: 100%; }
+        @media screen and (max-width: 1023px) {
+          .partners nav > ul > li img {
+            max-width: 400px; } }
+      .partners nav > ul > li > a {
         display: block;
         margin: 0 auto;
         font-size: 0 !important;
         line-height: 0 !important;
-        text-shadow: unset !important;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat; }
-        .partners .logos > li > a.aetc {
-          background-image: url("../../images/logo-aetc.png");
-          display: block;
-          position: relative; }
-          .partners .logos > li > a.aetc::after {
-            content: '';
-            display: block;
-            padding-bottom: 38.33333%; }
-        .partners .logos > li > a.iit {
-          background-image: url("../../images/logo-inittogether.svg");
-          display: block;
-          position: relative; }
-          .partners .logos > li > a.iit::after {
-            content: '';
-            display: block;
-            padding-bottom: 22.63682%; }
-        .partners .logos > li > a.hh {
-          background-image: url("../../images/logo-hishealth.svg");
-          display: block;
-          position: relative; }
-          .partners .logos > li > a.hh::after {
-            content: '';
-            display: block;
-            padding-bottom: 24.24242%; }
-        .partners .logos > li > a.cqii {
-          background-image: url("../../images/logo-cqii.svg");
-          display: block;
-          position: relative; }
-          .partners .logos > li > a.cqii::after {
-            content: '';
-            display: block;
-            padding-bottom: 24.6%; }
-        .partners .logos > li > a.ace {
-          background-image: url("../../images/logo-ace.svg");
-          display: block;
-          position: relative;
-          width: 70%; }
-          .partners .logos > li > a.ace::after {
-            content: '';
-            display: block;
-            padding-bottom: 62.66667%; }
-        .partners .logos > li > a.ihip {
-          background-image: url("../../images/logo-ihip.svg");
-          display: block;
-          position: relative; }
-          .partners .logos > li > a.ihip::after {
-            content: '';
-            display: block;
-            padding-bottom: 35.5%; }
-        .partners .logos > li > a.chatt {
-          background-image: url("../../images/logo-chatt.svg");
-          display: block;
-          position: relative; }
-          .partners .logos > li > a.chatt::after {
-            content: '';
-            display: block;
-            padding-bottom: 41.66667%; }
-        .partners .logos > li > a.ihap {
-          background-image: url("../../images/logo-ihap.svg");
-          display: block;
-          position: relative; }
-          .partners .logos > li > a.ihap::after {
-            content: '';
-            display: block;
-            padding-bottom: 21.6%; }
-        .partners .logos > li > a.wv {
-          background-image: url("../../images/logo-wellversed.svg");
-          display: block;
-          position: relative; }
-          .partners .logos > li > a.wv::after {
-            content: '';
-            display: block;
-            padding-bottom: 25.75107%; }
-        .partners .logos > li > a.deii {
-          background-image: url("../../images/logo-deii.svg");
-          display: block;
-          position: relative; }
-          .partners .logos > li > a.deii::after {
-            content: '';
-            display: block;
-            padding-bottom: 51.15207%; }
+        text-shadow: unset !important; }
 
 .book-promo .buttons-container {
   display: -ms-flexbox;
