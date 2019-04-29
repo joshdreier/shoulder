@@ -9,6 +9,10 @@
     margin-top: 0;
     margin-left: rem(40);
 
+    @include mq($tablet) {
+      margin-left: rem(20);
+    }
+
     @include mq($desktop) {
       margin-left: rem(20);
     }
@@ -22,7 +26,11 @@
   img {
     max-width: 130px;
 
-    @include mq($desktop) {
+    @include mq($tablet) {
+      max-width: 80px;
+    }
+
+    @include mq($ipad) {
       max-width: 100px;
     }
 

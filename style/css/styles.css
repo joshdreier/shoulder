@@ -875,6 +875,10 @@ article {
     content: "" !important; }
   @media screen and (min-width: 620px) {
     article {
+      padding-right: 30px;
+      padding-left: 30px; } }
+  @media screen and (min-width: 1024px) {
+    article {
       padding-right: 50px;
       padding-left: 50px; } }
 
@@ -901,6 +905,10 @@ article {
     clear: both;
     content: "" !important; }
   @media screen and (min-width: 620px) {
+    .layout-inner-container {
+      padding-right: 30px;
+      padding-left: 30px; } }
+  @media screen and (min-width: 1024px) {
     .layout-inner-container {
       padding-right: 50px;
       padding-left: 50px; } }
@@ -975,8 +983,7 @@ body {
 
 .menu {
   list-style: none;
-  padding: 0;
-  margin: 0; }
+  padding: 0; }
   .menu li {
     padding: 0;
     margin: 0; }
@@ -984,14 +991,12 @@ body {
 .thumb-list ul,
 .item-list ul {
   list-style: none;
-  padding: 0;
-  margin: 0; }
+  padding: 0; }
 
 nav ul,
 nav ol {
   list-style: none;
-  padding: 0;
-  margin: 0; }
+  padding: 0; }
   nav ul li,
   nav ol li {
     padding: 0;
@@ -1387,8 +1392,7 @@ li {
 .sidebar ul, .sidebar
 ol {
   list-style: none;
-  padding: 0;
-  margin: 0; }
+  padding: 0; }
 
 ul li:last-child,
 ol li:last-child {
@@ -1773,6 +1777,42 @@ figcaption {
     #header .active.hamburger-menu .icon span:nth-child(4) {
       display: none; }
 
+.logo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-shadow: unset !important;
+  transition: 250ms ease-in-out;
+  display: block;
+  background-image: url("../../images/logo.svg");
+  width: 220px;
+  height: 70px;
+  background-size: 220px auto;
+  background-position: center left; }
+  @media screen and (min-width: 620px) {
+    .logo {
+      width: 300px;
+      height: 90px;
+      background-size: 300px auto; } }
+  @media screen and (min-width: 1024px) {
+    .logo {
+      margin-bottom: 1px;
+      height: 106px;
+      margin-right: auto;
+      background-position: bottom left; } }
+  @media screen and (min-width: 1212px) {
+    .logo {
+      margin-bottom: 2px;
+      width: 400px;
+      background-size: 400px auto; } }
+  @media screen and (min-width: 1350px) {
+    .logo {
+      width: 480px;
+      background-size: 480px auto; } }
+
 .mc-field-group input[type=text],
 .mc-field-group input[type=email],
 .mc-field-group input[type=phone],
@@ -1834,10 +1874,11 @@ figure img {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0; }
+  padding: 0; }
   .social-media-icons ul > li {
     margin: 0 0 0 1.25rem; }
+    .social-media-icons ul > li:first-child {
+      margin-left: 0; }
     .social-media-icons ul > li > a {
       display: -ms-flexbox;
       display: flex;
@@ -1945,6 +1986,49 @@ figure img {
     .social-media-icons ul > li:last-child a {
       padding-right: 0; }
 
+.book-promo .buttons-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
+
+.book-promo ul {
+  margin-top: 0;
+  margin-left: 2.5rem; }
+  @media screen and (min-width: 620px) {
+    .book-promo ul {
+      margin-left: 1.25rem; } }
+  @media screen and (min-width: 1024px) {
+    .book-promo ul {
+      margin-left: 1.25rem; } }
+  @media screen and (min-width: 1212px) {
+    .book-promo ul {
+      margin-left: 2.5rem; } }
+
+.book-promo img {
+  max-width: 130px; }
+  @media screen and (min-width: 620px) {
+    .book-promo img {
+      max-width: 80px; } }
+  @media screen and (min-width: 768px) {
+    .book-promo img {
+      max-width: 100px; } }
+  @media screen and (min-width: 1212px) {
+    .book-promo img {
+      max-width: 130px; } }
+
+@media screen and (min-width: 620px) {
+  .book-promo .button {
+    width: 168px; } }
+
+@media screen and (min-width: 1024px) {
+  .book-promo .button {
+    width: 150px; } }
+
+@media screen and (min-width: 1212px) {
+  .book-promo .button {
+    width: 168px; } }
+
 @media screen and (min-width: 620px) {
   .columns {
     display: -ms-flexbox;
@@ -1975,16 +2059,13 @@ figure img {
 .columns ul,
 .columns ol {
   list-style: none;
-  padding: 0;
-  margin: 0; }
+  padding: 0; }
 
 .columns p,
 .columns ul,
 .columns ol,
 .columns li,
 .columns aside {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
   font-size: 0.9375rem;
   line-height: 1.6; }
   @media screen and (min-width: 620px) {
@@ -1993,8 +2074,6 @@ figure img {
     .columns ol,
     .columns li,
     .columns aside {
-      margin-top: 1.75rem;
-      margin-bottom: 1.75rem;
       font-size: 1rem;
       line-height: 1.625; } }
   @media screen and (min-width: 1350px) {
@@ -2068,7 +2147,7 @@ figure img {
 footer#footer {
   background: #0D47A1;
   color: #FFFFFF;
-  padding: 30px 0 60px; }
+  padding: 40px 0; }
   footer#footer::after {
     display: block;
     clear: both;
@@ -2082,18 +2161,25 @@ footer#footer {
   @media screen and (min-width: 1350px) {
     footer#footer {
       padding: 60px 0; } }
-  footer#footer .footer-top {
-    position: relative; }
-  footer#footer h2 {
-    position: absolute !important;
-    clip: rect(1px 1px 1px 1px);
-    /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 0;
-    border: 0;
-    height: 1px;
-    width: 1px;
-    overflow: hidden; }
+  footer#footer .footer-container {
+    max-width: 1540px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%; }
+    footer#footer .footer-container::after {
+      display: block;
+      clear: both;
+      content: "" !important; }
+    @media screen and (min-width: 620px) {
+      footer#footer .footer-container {
+        padding-right: 30px;
+        padding-left: 30px; } }
+    @media screen and (min-width: 1024px) {
+      footer#footer .footer-container {
+        padding-right: 50px;
+        padding-left: 50px; } }
   footer#footer a {
     color: #efefef;
     transform: translate3d(0, 0, 0); }
@@ -2103,134 +2189,50 @@ footer#footer {
       transition: 250ms ease-in-out;
       color: #FFFFFF;
       text-decoration: underline; }
-  @media screen and (min-width: 620px) {
-    footer#footer li {
-      font-size: 0.9375rem;
-      line-height: 1.2; } }
-  @media screen and (min-width: 1024px) {
-    footer#footer li {
-      font-size: 1rem;
-      line-height: 1.25; } }
-  @media screen and (min-width: 1024px) {
-    footer#footer .menu-block-wrapper > .menu {
-      display: -ms-flexbox;
-      display: flex; } }
-  @media screen and (min-width: 1024px) {
-    footer#footer .menu-block-wrapper > .menu > li {
-      width: 20%;
-      padding-right: 2%; } }
-  footer#footer .menu-block-wrapper > .menu > li.first {
-    display: none; }
-  footer#footer .menu-block-wrapper > .menu > li > a {
-    display: inline-block;
-    padding: 10px 0;
-    font-weight: bold; }
-  @media screen and (max-width: 1023px) {
-    footer#footer .menu-block-wrapper > .menu > li > .menu {
-      display: none; } }
-  footer#footer .menu-block-wrapper > .menu > li > .menu > li > a {
-    display: inline-block;
-    padding: 10px 0; }
-  footer#footer .footer-follow {
-    position: absolute; }
-    @media screen and (max-width: 619px) {
-      footer#footer .footer-follow {
-        top: -2px; } }
-    @media screen and (min-width: 620px) and (max-width: 1023px) {
-      footer#footer .footer-follow {
-        top: -5px; } }
-    @media screen and (max-width: 1023px) {
-      footer#footer .footer-follow {
-        right: 0; } }
-    @media screen and (min-width: 1024px) {
-      footer#footer .footer-follow {
-        bottom: 10px;
-        left: 80%; } }
-  footer#footer .footer-logo {
-    display: block;
-    position: relative;
-    margin-bottom: 30px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-size: 0 !important;
-    line-height: 0 !important;
-    text-shadow: unset !important;
-    transition: 250ms ease-in-out;
-    background-image: url("../../images/logo-targethiv-white.svg");
-    width: 130px;
-    height: 39px; }
-    @media screen and (min-width: 620px) and (max-width: 1023px) {
-      footer#footer .footer-logo {
-        width: 180px;
-        height: 54px; } }
-    @media screen and (min-width: 1024px) {
-      footer#footer .footer-logo {
-        width: 210px;
-        height: 63px; } }
-    @media screen and (min-width: 1350px) {
-      footer#footer .footer-logo {
-        width: 238px;
-        height: 72px; } }
-  footer#footer .copyright-container {
-    font-size: 0.75rem;
-    margin-top: 50px; }
+  footer#footer .logo {
+    float: left;
+    background-image: url("../../images/logo-white.svg");
+    width: 300px;
+    height: 30px;
+    background-size: 300px auto;
+    background-position: center left;
+    margin-bottom: 1.875rem; }
+  footer#footer .social-container {
+    clear: left;
+    float: left;
+    margin-bottom: 1.25rem; }
     @media screen and (min-width: 620px) {
-      footer#footer .copyright-container {
+      footer#footer .social-container {
+        clear: right;
+        float: right;
+        margin-bottom: 1.6875rem; } }
+  footer#footer nav.main {
+    clear: left;
+    float: left;
+    margin-bottom: 2.5rem; }
+    @media screen and (min-width: 620px) {
+      footer#footer nav.main {
+        margin-bottom: 0; } }
+    @media screen and (min-width: 1024px) {
+      footer#footer nav.main ul {
         display: -ms-flexbox;
-        display: flex;
-        position: relative; } }
-    @media screen and (min-width: 1024px) {
-      footer#footer .copyright-container {
-        margin-top: 90px; } }
+        display: flex; } }
+    footer#footer nav.main ul > li {
+      margin-right: 1.25rem;
+      font-size: 1.125rem;
+      font-family: lato;
+      font-weight: bold; }
+      @media screen and (max-width: 1023px) {
+        footer#footer nav.main ul > li {
+          margin-bottom: 0.625rem; } }
+  footer#footer .copyright {
+    clear: left;
+    float: left;
+    font-size: 1rem; }
     @media screen and (min-width: 620px) {
-      footer#footer .copyright-container .copyright {
-        width: 60%; } }
-    @media screen and (min-width: 1024px) {
-      footer#footer .copyright-container .copyright {
-        width: 72%; } }
-    footer#footer .copyright-container .copyright p {
-      color: #efefef;
-      font-size: 0.8125rem; }
-      @media screen and (min-width: 768px) {
-        footer#footer .copyright-container .copyright p {
-          font-size: 0.875rem; } }
-    @media screen and (max-width: 619px) {
-      footer#footer .copyright-container .logo {
-        margin-bottom: 10px; } }
-    @media screen and (min-width: 620px) {
-      footer#footer .copyright-container .logo {
-        position: absolute;
-        top: 7px;
-        right: 32px; } }
-    @media screen and (min-width: 1024px) {
-      footer#footer .copyright-container .logo {
-        bottom: 5px;
-        left: 80%; } }
-    footer#footer .copyright-container .logo a {
-      display: block;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      font-size: 0 !important;
-      line-height: 0 !important;
-      text-shadow: unset !important;
-      background-image: url("../../images/logo-hrsa.svg");
-      width: 112px;
-      height: 30px;
-      transition: 250ms ease-in-out; }
-      @media screen and (min-width: 620px) {
-        footer#footer .copyright-container .logo a {
-          width: 150px;
-          height: 40px; } }
-      @media screen and (min-width: 1024px) {
-        footer#footer .copyright-container .logo a {
-          width: 175px;
-          height: 47px; } }
-      @media screen and (min-width: 1212px) {
-        footer#footer .copyright-container .logo a {
-          width: 200px;
-          height: 54px; } }
+      footer#footer .copyright {
+        clear: right;
+        float: right; } }
 
 #header {
   width: 100%;
@@ -2245,6 +2247,10 @@ footer#footer {
     clear: both;
     content: "" !important; }
   @media screen and (min-width: 620px) {
+    #header {
+      padding-right: 30px;
+      padding-left: 30px; } }
+  @media screen and (min-width: 1024px) {
     #header {
       padding-right: 50px;
       padding-left: 50px; } }
@@ -2271,41 +2277,6 @@ footer#footer {
   @media screen and (min-width: 620px) {
     #header .layout-inner-container {
       padding: 0; } }
-  #header .logo {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-size: 0 !important;
-    line-height: 0 !important;
-    text-shadow: unset !important;
-    transition: 250ms ease-in-out;
-    display: block;
-    background-image: url("../../images/logo.svg");
-    width: 220px;
-    height: 70px;
-    background-size: 220px auto;
-    background-position: center left; }
-    @media screen and (min-width: 620px) {
-      #header .logo {
-        width: 300px;
-        height: 90px;
-        background-size: 300px auto; } }
-    @media screen and (min-width: 1024px) {
-      #header .logo {
-        margin-bottom: 1px;
-        height: 106px;
-        margin-right: auto;
-        background-position: bottom left; } }
-    @media screen and (min-width: 1212px) {
-      #header .logo {
-        margin-bottom: 2px;
-        width: 400px;
-        background-size: 400px auto; } }
-    @media screen and (min-width: 1350px) {
-      #header .logo {
-        width: 480px;
-        background-size: 480px auto; } }
   .mobile-nav-open #header .hamburger-menu::after {
     content: '';
     position: absolute;
@@ -2357,7 +2328,8 @@ footer#footer {
           html.pointerevents #header .topnav > ul li a:focus,
           html.pointerevents #header .topnav > ul li a:active,
           html.pointerevents #header .topnav > ul li a:hover {
-            transition: 250ms ease-in-out; }
+            transition: 250ms ease-in-out;
+            color: #1879CD; }
 
 .hero {
   position: relative;
@@ -2436,6 +2408,10 @@ footer#footer {
       clear: both;
       content: "" !important; }
     @media screen and (min-width: 620px) {
+      .hero .hero-container {
+        padding-right: 30px;
+        padding-left: 30px; } }
+    @media screen and (min-width: 1024px) {
       .hero .hero-container {
         padding-right: 50px;
         padding-left: 50px; } }
@@ -2575,6 +2551,10 @@ footer#footer {
         clear: both;
         content: "" !important; } }
   @media screen and (min-width: 1024px) and (min-width: 620px) {
+    .hero .social-container {
+      padding-right: 30px;
+      padding-left: 30px; } }
+  @media screen and (min-width: 1024px) and (min-width: 1024px) {
     .hero .social-container {
       padding-right: 50px;
       padding-left: 50px; } }
@@ -2931,6 +2911,10 @@ footer#footer {
       content: "" !important; }
     @media screen and (min-width: 620px) {
       .partners nav {
+        padding-right: 30px;
+        padding-left: 30px; } }
+    @media screen and (min-width: 1024px) {
+      .partners nav {
         padding-right: 50px;
         padding-left: 50px; } }
     @media screen and (min-width: 1024px) {
@@ -2952,7 +2936,6 @@ footer#footer {
     .partners nav > ul {
       list-style: none;
       padding: 0;
-      margin: 0;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;
@@ -2994,42 +2977,5 @@ footer#footer {
         font-size: 0 !important;
         line-height: 0 !important;
         text-shadow: unset !important; }
-
-.book-promo .buttons-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center; }
-
-.book-promo ul {
-  margin-top: 0;
-  margin-left: 2.5rem; }
-  @media screen and (min-width: 1024px) {
-    .book-promo ul {
-      margin-left: 1.25rem; } }
-  @media screen and (min-width: 1212px) {
-    .book-promo ul {
-      margin-left: 2.5rem; } }
-
-.book-promo img {
-  max-width: 130px; }
-  @media screen and (min-width: 1024px) {
-    .book-promo img {
-      max-width: 100px; } }
-  @media screen and (min-width: 1212px) {
-    .book-promo img {
-      max-width: 130px; } }
-
-@media screen and (min-width: 620px) {
-  .book-promo .button {
-    width: 168px; } }
-
-@media screen and (min-width: 1024px) {
-  .book-promo .button {
-    width: 150px; } }
-
-@media screen and (min-width: 1212px) {
-  .book-promo .button {
-    width: 168px; } }
 
 /*# sourceMappingURL=maps/styles.css.map */

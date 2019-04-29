@@ -6,7 +6,7 @@ $hero-height-plus: 700px;
   position: relative;
   background-position: center top;
   background: $white-smoke;
-  padding-bottom: rem(20);
+  padding-bottom: rem(30);
   margin-bottom: rem(40);
 
   @include mq($tablet) {

@@ -8,6 +8,10 @@
   width: 100%;
 
   @include mq($tablet) {
+    @include padding(null $gutter-tablet);
+  }
+
+  @include mq($desktop) {
     @include padding(null $gutter-desktop);
   }
 
