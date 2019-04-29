@@ -97,24 +97,71 @@
 
   .column {
 
-    @include mq($tablet-only) {
+    &:nth-child(1) {
 
-      &:last-child {
-        grid-column: 1 / 4;
-      }
-
-      &:nth-child(1) {
+      @include mq($tablet-only) {
         padding-right: rem(30);
       }
 
-      &:nth-child(2) {
+    }
+
+    &:nth-child(2) {
+
+      @include mq($tablet-only) {
         padding-left: rem(30);
       }
 
-    }//@include mq($tablet-only)
+    }
+
+    &:nth-child(3) {
+
+      @include mq($tablet-only) {
+        grid-column: 1 / 4;
+      }
+
+    }
+
+    // IEIEIEIE
+    @supports not (grid-column-gap: 1vh) {}
+
+      &:nth-child(1) {
+        -ms-grid-column: 1;
+
+        @include mq($tablet) {
+          padding-right: 3%;
+        }
+
+        @include mq($desktop) {
+          padding-right: 6%;
+        }
+
+      }
+
+      &:nth-child(2) {
+        -ms-grid-column: 2;
+
+        @include mq($tablet) {
+          padding-left: 3%;
+        }
+
+        @include mq($desktop) {
+          padding-right: 3%;
+        }
+
+      }
+
+      &:nth-child(3) {
+        -ms-grid-column: 3;
+
+        @include mq($desktop) {
+          padding-left: 6%;
+        }
+
+      }
+
+    }
 
   }//.column
-
 
 }//.columns
 
