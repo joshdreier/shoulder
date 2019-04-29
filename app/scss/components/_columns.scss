@@ -13,7 +13,7 @@
   @include mq($desktop) {
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 6%;
+    //grid-column-gap: 6%;
   }
 
   section {
@@ -98,68 +98,44 @@
   .column {
 
     &:nth-child(1) {
+      -ms-grid-column: 1;
 
-      @include mq($tablet-only) {
-        padding-right: rem(30);
+
+      @include mq($tablet) {
+        padding-right: 6%;
+      }
+
+      @include mq($desktop) {
+        padding-right: 12%;
       }
 
     }
 
     &:nth-child(2) {
+      -ms-grid-column: 2;
 
-      @include mq($tablet-only) {
-        padding-left: rem(30);
+
+      @include mq($tablet) {
+        padding-left: 6%;
+      }
+
+      @include mq($desktop) {
+        padding-right: 6%;
       }
 
     }
 
     &:nth-child(3) {
+      -ms-grid-column: 3;
 
-      @include mq($tablet-only) {
-        grid-column: 1 / 4;
+
+
+      @include mq($desktop) {
+        padding-left: 12%;
       }
 
     }
 
-    // IEIEIEIE
-    @supports not (grid-column-gap: 1vh) {
-
-      &:nth-child(1) {
-        -ms-grid-column: 1;
-
-        @include mq($tablet) {
-          padding-right: 3%;
-        }
-
-        @include mq($desktop) {
-          padding-right: 6%;
-        }
-
-      }
-
-      &:nth-child(2) {
-        -ms-grid-column: 2;
-
-        @include mq($tablet) {
-          padding-left: 3%;
-        }
-
-        @include mq($desktop) {
-          padding-right: 3%;
-        }
-
-      }
-
-      &:nth-child(3) {
-        -ms-grid-column: 3;
-
-        @include mq($desktop) {
-          padding-left: 6%;
-        }
-
-      }
-
-    }
 
   }//.column
 
