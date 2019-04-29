@@ -122,7 +122,7 @@
     }
 
     // IEIEIEIE
-    @supports not (grid-column-gap: 1vh) {}
+    @supports not (grid-column-gap: 1vh) {
 
       &:nth-child(1) {
         -ms-grid-column: 1;
