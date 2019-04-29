@@ -13,26 +13,26 @@ var modernizr = require('gulp-modernizr');
 
 var paths = {
   scripts: [
-    'js/**/*.js',
-    '!js/**/*.min.js'
+    'app/js/**/*.js',
+    'app/!js/**/*.min.js'
   ],
   sass: {
-    main: 'style/scss/styles.scss',
-    watch: 'style/scss/**/*'
+    main: 'app/scss/styles.scss',
+    watch: 'app/scss/**/*'
   },
   css: {
-    root: 'style/css'
+    root: 'dist/css'
   },
   clean: [
-    'style/css/styles.css',
-    'style/css/**/*.css.map',
-    'js/**/*.min.js'
+    'dist/css/styles.css',
+    'dist/css/**/*.css.map',
+    'dist/js/**/*.min.js'
   ]
 };
 
 gulp.task('modernizr', function () {
   'use strict';
-  return gulp.src('js/*.js')
+  return gulp.src('app/js/*.js')
     .pipe(modernizr('modernizr.min.js', {
       options: [
         'setClasses',
@@ -46,7 +46,7 @@ gulp.task('modernizr', function () {
       crawl: false
     }))
     .pipe(uglify())
-    .pipe(gulp.dest('js/vendor'));
+    .pipe(gulp.dest('dist/js/vendor'));
 });
 
 gulp.task('clean', function () {
@@ -69,8 +69,8 @@ gulp.task('sass-lint', function () {
       files: {
         ignore: [
           'bower_components/**/*.scss',
-          'style/scss/normalize/**',
-          'style/scss/styles.scss'
+          'apps/css/normalize/**',
+          'apps/css/styles.scss'
         ]
       },
       rules: {
@@ -99,7 +99,7 @@ gulp.task('compress', function () {
   return gulp.src(paths.scripts)
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('js/dist'));
+    .pipe(gulp.dest('dist/js/dist'));
 });
 
 gulp.task('sass', function () {
@@ -130,7 +130,18 @@ gulp.task('sourcemaps', function () {
     .pipe(gulp.dest(paths.css.root));
 });
 
-gulp.task('build', ['sass', 'compress', 'modernizr']);
+
+gulp.task('html', function () {
+  return gulp.src('app/*.html')
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('images', () => {
+  return gulp.src('app/images/**/*')
+    .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('build', ['sass', 'compress', 'modernizr', 'html', 'images']);
 
 gulp.task('watch', ['build'], function () {
   'use strict';

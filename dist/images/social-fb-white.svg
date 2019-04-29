@@ -1,0 +1,25 @@
+
+<svg width="40px" height="41px" viewBox="0 0 40 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-0.8%" y="-1.9%" width="101.6%" height="103.8%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage" transform="translate(-1242.000000, -665.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Circle" filter="url(#filter-1)" transform="translate(-50.000000, 106.000000)">
+                <g id="Social" transform="translate(42.000000, 0.111811)">
+                    <g id="facebook-square-brands" transform="translate(1250.000000, 559.000000)">
+                        <path d="M40,4.27896513 L40,35.6580427 C40,38.0203881 38.0803571,39.9370079 35.7142857,39.9370079 L28.0982143,39.9370079 L28.0982143,24.1404949 L33.5089286,24.1404949 L34.2857143,18.1142857 L28.0982143,18.1142857 L28.0982143,14.2632171 C28.0982143,12.515973 28.5803571,11.3303431 31.0892857,11.3303431 L34.2857143,11.3303431 L34.2857143,5.94597863 C33.7321429,5.87466254 31.8392857,5.70528684 29.625,5.70528684 C25.0178571,5.70528684 21.8571429,8.51335771 21.8571429,13.6748594 L21.8571429,18.1232002 L16.4285714,18.1232002 L16.4285714,24.1494094 L21.8660714,24.1494094 L21.8660714,39.9370079 L4.28571429,39.9370079 C1.91964286,39.9370079 0,38.0203881 0,35.6580427 L0,4.27896513 C0,1.9166198 1.91964286,0 4.28571429,0 L35.7142857,0 C38.0803571,0 40,1.9166198 40,4.27896513 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
