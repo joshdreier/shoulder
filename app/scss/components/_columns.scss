@@ -128,7 +128,10 @@
     &:nth-child(3) {
       -ms-grid-column: 3;
 
-
+      @include mq($tablet-only) {
+        -ms-grid-column: 1 / 4;
+        grid-column: 1 / 4;
+      }
 
       @include mq($desktop) {
         padding-left: 12%;
@@ -140,5 +143,3 @@
   }//.column
 
 }//.columns
-
-
