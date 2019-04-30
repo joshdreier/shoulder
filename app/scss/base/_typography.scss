@@ -20,6 +20,10 @@ a {
 
 }
 
+a[href^="tel"] {
+  color: $persian-green;
+}
+
 h1 {
   font-family: $lora;
   font-weight: normal;
