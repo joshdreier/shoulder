@@ -4,6 +4,24 @@ body {
   overflow-x: hidden;
 }
 
+body:not(.home) {
+
+  @include mq($desktop) {
+
+    &::after {
+      content: '';
+      background: $gainsboro;
+      width: 100%;
+      height: 10px;
+      position: absolute;
+      top: 106px;
+      left: 0;
+      right: 0;
+    }
+
+  }
+}
+
 main#main {
   @include clearfix;
   min-height: 500px;
@@ -32,6 +50,7 @@ main#main {
 
 article {
   @include grid-container;
+  min-height: 300px;
 }
 
 .layout-container {

@@ -1,4 +1,5 @@
 #header {
+  position: relative;
   width: 100%;
   @include grid-container;
 
@@ -36,6 +37,7 @@
 
   .hamburger-menu {
     @extend %hamburger-menu;
+    margin-top: -1px;
 
     // white mask
     .mobile-nav-open & {
@@ -51,10 +53,6 @@
       }
 
     }//.mobile-nav-open &
-
-    @include mq($tablet-only) {
-      margin-top: -1px;
-    }
 
   }//.hamburger-menu
 
